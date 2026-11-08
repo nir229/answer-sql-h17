@@ -1,0 +1,37 @@
+SELECT c.course_name, l.first_name, l.last_name
+FROM courses c
+JOIN lecturers l on c.lecturer_id = l.lecturer_id
+GROUP by c.course_name; 
+
+SELECT c.course_name, l.first_name, l.last_name
+FROM courses c
+LEFT JOIN lecturers l on c.lecturer_id = l.lecturer_id
+WHERE l.first_name is NULL ;
+
+SELECT c.course_name, l.first_name, l.last_name
+FROM courses c
+LEFT JOIN lecturers l on c.lecturer_id = l.lecturer_id;
+
+SELECT l.first_name, l.last_name , c.course_name
+FROM lecturers l
+JOIN courses c on c.lecturer_id = l.lecturer_id
+ORDER BY first_name ASC;
+
+SELECT l.first_name, l.last_name , c.course_name
+FROM lecturers l
+LEFT JOIN courses c on c.lecturer_id = l.lecturer_id
+WHERE c.course_name is NULL
+ORDER BY first_name ASC;
+
+SELECT l.first_name, l.last_name , c.course_name
+FROM lecturers l
+LEFT JOIN courses c on c.lecturer_id = l.lecturer_id
+ORDER BY l.first_name ASC;
+
+SELECT c.course_name, l.first_name, l.last_name
+FROM courses c
+FULL OUTER JOIN lecturers l on c.lecturer_id = l.lecturer_id;
+
+SELECT l.first_name, l.last_name , c.course_name
+FROM lecturers l
+CROSS JOIN courses c;
