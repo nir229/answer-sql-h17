@@ -1,0 +1,43 @@
+SELECT COUNT(*) AS total_customers
+FROM ecomm;
+
+SELECT AVG(Age) AS average_age
+FROM ecomm;
+
+SELECT Gender, COUNT(*) AS customer_count
+FROM ecomm
+GROUP BY Gender;
+
+SELECT Gender, AVG("Items Purchased") AS avg_items_purchased
+FROM ecomm
+GROUP BY Gender;
+
+SELECT COUNT(DISTINCT "Membership Type") AS membership_types_count
+FROM ecomm;
+
+SELECT "Membership Type", COUNT(*) AS members_count
+FROM ecomm
+GROUP BY "Membership Type";
+
+SELECT COUNT(*) AS new_york_customers
+FROM ecomm
+WHERE City = 'New York';
+
+SELECT City, COUNT(*) AS customer_count
+FROM ecomm
+GROUP BY City
+ORDER BY customer_count DESC;
+
+SELECT Gender, SUM("Total Spend") AS total_spend
+FROM ecomm
+GROUP BY Gender;
+
+SELECT "Customer ID", "Items Purchased"
+FROM ecomm
+ORDER BY "Items Purchased" DESC
+LIMIT 1;
+
+SELECT "Customer ID", "Items Purchased"
+FROM ecomm
+ORDER BY "Items Purchased" ASC
+LIMIT 1;
